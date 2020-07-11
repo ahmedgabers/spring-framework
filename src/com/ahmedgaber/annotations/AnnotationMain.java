@@ -8,7 +8,7 @@ public class AnnotationMain {
 		
 		// read spring config file
 		ClassPathXmlApplicationContext context = 
-				new ClassPathXmlApplicationContext("applicationContext.xml");
+				new ClassPathXmlApplicationContext("applicationContextA.xml");
 		
 		
 		// get the bean from spring container
@@ -17,7 +17,10 @@ public class AnnotationMain {
 		System.out.println(theCoach.getDailyWorkout());
 		// call a method on the bean
 		
+		System.out.println(theCoach.getDailyFortune());
+		
 		// close the context
+		context.close();
 
 	}
 
