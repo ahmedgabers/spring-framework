@@ -17,7 +17,7 @@ public class TrackCoach implements Coach {
 
 	@Override
 	public String getDailyFortune() {
-		// TODO Auto-generated method stub
+		
 		return "Just Do it: " + fortuneService.getFortune();
 	}
 	
