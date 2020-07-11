@@ -2,9 +2,11 @@ package com.ahmedgaber.annotations;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired
@@ -16,7 +18,7 @@ public class TennisCoach implements Coach {
 //		fortuneService = theFortuneService;
 //	}
 	public TennisCoach() {
-		System.out.println(">> inside default constructor");
+		System.out.println("TennisCoach >> inside default constructor");
 	}
 	
 	
