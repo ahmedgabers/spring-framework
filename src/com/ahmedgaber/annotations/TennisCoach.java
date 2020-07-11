@@ -1,25 +1,34 @@
 package com.ahmedgaber.annotations;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach {
 	
 	@Autowired
 	@Qualifier("randomService")
 	private FortuneService fortuneService;
-	
-//	@Autowired
-//	public TennisCoach(FortuneService theFortuneService) {
-//		fortuneService = theFortuneService;
-//	}
+
 	public TennisCoach() {
 		System.out.println("TennisCoach >> inside default constructor");
 	}
+	
+	@PostConstruct
+	public void doMyStartupStuff() {
+		System.out.println(">> TennisCoach: inside PostConstructor");
+	}
+	
+	@PreDestroy
+	public void doMyCleanupStuff() {
+		System.out.println(">> TennisCoach: inside PreDestroy");
+	}
+	
 	
 	
 	// define a setter method
