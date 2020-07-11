@@ -9,7 +9,7 @@
     
     <!--  load properties from file -->
     <context:property-placeholder location="classpath:sport.properties"/>
-
+<context:component-scan base-package="com.ahmedgaber.annotations"></context:component-scan>
     <!-- Define your beans here -->
     
     <bean id="myFortune" 
