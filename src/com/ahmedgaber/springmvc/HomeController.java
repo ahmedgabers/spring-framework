@@ -10,12 +10,4 @@ public class HomeController {
 	public String showPage() {
 		return "main-menu";
 	}
-	
-	
-	
-	
-	
-	
-	
-
 }
