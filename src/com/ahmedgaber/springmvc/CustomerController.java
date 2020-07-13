@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/customer")
 public class CustomerController {
 	
-	// add an initbinder .. to convert trim input strings
+	// add an initbinder .. to convert trim  input strings
 	// remove leading and trailing whitespaces
 	// resolve validation issue
 	
@@ -36,6 +36,9 @@ public class CustomerController {
 	@RequestMapping("/processForm")
 	public String processForm(@Valid@ModelAttribute("customer") Customer theCustomer, 
 							BindingResult theBindingResult) {
+		
+		System.out.println("Binding result: " + theBindingResult);
+		System.out.println("\n\n\n\n");
 		
 		if(theBindingResult.hasErrors()) {
 			return "customer-form";
