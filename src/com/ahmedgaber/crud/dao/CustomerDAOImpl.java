@@ -13,27 +13,28 @@ import org.springframework.stereotype.Repository;
 import com.ahmedgaber.crud.entity.Customer;
 
 @Repository
-public class CustomerDAOIml implements CustomerDAO {
+public class CustomerDAOImpl implements CustomerDAO {
 
-	
+	// need to inject the session factory
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	
+			
 	@Override
 	@Transactional
 	public List<Customer> getCustomers() {
+		
 		// get the current hibernate session
 		Session currentSession = sessionFactory.getCurrentSession();
-		
-		// create a query and get result list
-		
+				
+		// create a query
 		Query<Customer> theQuery = 
 				currentSession.createQuery("from Customer", Customer.class);
 		
+		// execute query and get result list
 		List<Customer> customers = theQuery.getResultList();
-		
-		return null;
+				
+		// return the results		
+		return customers;
 	}
 
 }
