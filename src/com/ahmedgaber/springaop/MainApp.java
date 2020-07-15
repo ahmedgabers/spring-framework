@@ -22,8 +22,24 @@ public class MainApp {
 		
 		
 		// call the business methods
-		theAccountDAO.addAccount(myAccount);
+		theAccountDAO.addAccount(myAccount, true);
+		System.out.println();
+		theAccountDAO.doWork();
+		System.out.println();
+		
 		theMembershipDAO.addAccount();
+		System.out.println();
+		theMembershipDAO.goToSleep();
+		System.out.println();
+		
+		// call the getter/setters
+		
+		theAccountDAO.setName("foobar");
+		theAccountDAO.setServiceCode("silver");
+		
+		String name = theAccountDAO.getName();
+		String code = theAccountDAO.getServiceCode();
+
 		
 		// close the context
 		context.close();

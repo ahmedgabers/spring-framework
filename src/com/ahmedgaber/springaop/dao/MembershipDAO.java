@@ -6,7 +6,11 @@ import org.springframework.stereotype.Component;
 public class MembershipDAO {
 
 	public void addAccount() {
-		System.out.println(getClass() + ": ADDING A MEMBERSHIP ACCOUNT addAccount()");
+		System.out.println(getClass() + ": MembershipDAO.addAccount()");
+	}
+	
+	public void goToSleep() {
+		System.out.println(getClass() + ": MembershipDAO.goToSleep()");
 	}
 	
 	
