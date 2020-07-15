@@ -5,7 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.ahmedgaber.springaop.dao.AccountDAO;
 import com.ahmedgaber.springaop.dao.MembershipDAO;
 
-public class MainApp {
+public class BeforeMain {
 
 	public static void main(String[] args) {
 		
@@ -19,8 +19,9 @@ public class MainApp {
 		MembershipDAO theMembershipDAO = context.getBean("membershipDAO", MembershipDAO.class);
 		
 		Account myAccount = new Account();
-		
-		
+		myAccount.setName("Ahmed");
+		myAccount.setLevel("Platinum");
+	
 		// call the business methods
 		theAccountDAO.addAccount(myAccount, true);
 		System.out.println();

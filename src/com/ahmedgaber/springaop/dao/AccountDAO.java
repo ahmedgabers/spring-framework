@@ -1,6 +1,10 @@
 package com.ahmedgaber.springaop.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
+
 import com.ahmedgaber.springaop.Account;
 
 @Component
@@ -8,6 +12,41 @@ public class AccountDAO {
 	
 	private String name;
 	private String serviceCode;
+	
+	
+	public List<Account> findAccounts() {
+		List<Account> myAccounts = new ArrayList<>();
+		
+		Account temp1 = new Account("Sara", "Silver");
+		Account temp2 = new Account("Ahmed", "Platinum");
+		Account temp3 = new Account("xeon", "Gold");
+		
+		myAccounts.add(temp1);
+		myAccounts.add(temp2);
+		myAccounts.add(temp2);
+		
+		return myAccounts;
+	}
+	
+	public List<Account> findAccountsException(boolean tripWire) {
+		
+		
+		if(tripWire) {
+			throw new RuntimeException("RuntimeException here");
+		}
+		
+		List<Account> myAccounts = new ArrayList<>();
+		
+		Account temp1 = new Account("Sara", "Silver");
+		Account temp2 = new Account("Ahmed", "Platinum");
+		Account temp3 = new Account("xeon", "Gold");
+		
+		myAccounts.add(temp1);
+		myAccounts.add(temp2);
+		myAccounts.add(temp2);
+		
+		return myAccounts;
+	}
 	
 	
 	
@@ -39,4 +78,7 @@ public class AccountDAO {
 	public void doWork() {
 		System.out.println(getClass() + ": AccountDAO.doWork()");
 	}
+
+
+	
 }
