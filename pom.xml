@@ -10,7 +10,6 @@
 
 	<name>spring-security</name>
 
-
 	<properties>
 		<springframework.version>5.2.6.RELEASE</springframework.version>
 		<springsecurity.version>5.3.3.RELEASE</springsecurity.version>
