@@ -19,7 +19,6 @@
 	</properties>
 
 	<dependencies>
-
 		<!-- Spring MVC support -->
 		<dependency>
 			<groupId>org.springframework</groupId>
