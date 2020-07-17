@@ -1,3 +1,3 @@
 # Spring Framework
 
-#### A collection of applications that uses spring core and web.
+#### Spring Core, WebMVC and REST implementations
